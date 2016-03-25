@@ -9,8 +9,11 @@
   "author": "Michał Ordon",
   "license": "MIT",
   "dependencies": {
+    "browserify": "^13.0.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^3.2.1",
-    "gulp-open": "^1.0.0"
+    "gulp-open": "^1.0.0",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
