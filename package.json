@@ -1,0 +1,16 @@
+{
+  "name": "psadmin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michał Ordon",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^3.2.1",
+    "gulp-open": "^1.0.0"
+  }
+}
