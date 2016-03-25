@@ -17,7 +17,8 @@
     "jquery": true
   },
   "rules": {
-    "no-console": 0
+    "no-console": 0,
+    "react/no-did-mount-set-state": 0
   },
   "globals": {
     "jQuery": true,
