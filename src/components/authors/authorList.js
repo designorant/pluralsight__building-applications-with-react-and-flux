@@ -1,6 +1,6 @@
 var React = require('react');
 
-var AuthorsList = React.createClass({
+var AuthorList = React.createClass({
 
     propTypes: {
         authors: React.PropTypes.array
@@ -36,4 +36,4 @@ var AuthorsList = React.createClass({
 
 });
 
-module.exports = AuthorsList;
+module.exports = AuthorList;
