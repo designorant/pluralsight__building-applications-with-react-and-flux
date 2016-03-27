@@ -4,6 +4,11 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
-var routes = require('./routes')
+var routes = require('./routes');
+var createHashHistory = require('history/lib/createHashHistory');
 
-ReactDOM.render(<Router routes={routes} />, document.getElementById('app'));
+var history = createHashHistory({
+    queryKey: false
+});
+
+ReactDOM.render(<Router history={history} routes={routes} />, document.getElementById('app'));
