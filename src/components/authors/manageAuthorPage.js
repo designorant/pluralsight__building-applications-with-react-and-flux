@@ -5,21 +5,31 @@ var ReactRouter = require('react-router');
 var AuthorForm = require('./authorForm');
 var AuthorApi = require('../../api/authorApi')
 var toastr = require('toastr');
+var Lifecycle = ReactRouter.Lifecycle;
 
 var ManageAuthorPage = React.createClass({
 
     mixins: [
-        ReactRouter.History
+        ReactRouter.History,
+        Lifecycle
     ],
 
     getInitialState: function() {
         return {
             author: { id: '', firstName: '', lastName: '' },
-            errors: {}
+            errors: {},
+            dirty: false
+        }
+    },
+
+    routerWillLeave: function() {
+        if (this.state.dirty) {
+            return 'Leave without saving?';
         }
     },
 
     setAuthorState: function(event) {
+        this.setState({dirty: true});
         var field = event.target.name;
         var value = event.target.value;
         this.state.author[field] = value;
@@ -51,6 +61,8 @@ var ManageAuthorPage = React.createClass({
         }
 
         AuthorApi.saveAuthor(this.state.author);
+        // this.setState({dirty: false}); // XXX Why this doesn't work?!
+        this.state.dirty = false;
         toastr.success('Author saved');
         this.history.pushState(null, 'authors');
     },
