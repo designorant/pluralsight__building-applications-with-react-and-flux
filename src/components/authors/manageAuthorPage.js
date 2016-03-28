@@ -1,10 +1,15 @@
 'use strict';
 
 var React = require('react');
+var ReactRouter = require('react-router');
 var AuthorForm = require('./authorForm');
 var AuthorApi = require('../../api/authorApi')
 
 var ManageAuthorPage = React.createClass({
+
+    mixins: [
+        ReactRouter.History
+    ],
 
     getInitialState: function() {
         return {
@@ -22,6 +27,7 @@ var ManageAuthorPage = React.createClass({
     saveAuthor: function(event) {
         event.preventDefault();
         AuthorApi.saveAuthor(this.state.author);
+        this.history.pushState(null, 'authors');
     },
 
     render: function() {
