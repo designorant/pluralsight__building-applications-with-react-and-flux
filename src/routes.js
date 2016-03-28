@@ -9,6 +9,7 @@ var Redirect = ReactRouter.Redirect;
 var App = require('./components/app');
 var HomePage = require('./components/homePage');
 var AuthorPage = require('./components/authors/authorPage');
+var ManageAuthorPage = require('./components/authors/manageAuthorPage');
 var AboutPage = require('./components/about/aboutPage');
 var NotFoundPage = require('./components/notFoundPage');
 
@@ -16,6 +17,7 @@ var routes = (
     <Route path="/" component={App}>
         <IndexRoute component={HomePage} />
         <Route path="authors" component={AuthorPage} />
+        <Route path="author" component={ManageAuthorPage} />
         <Route path="about" component={AboutPage} />
         <Redirect from="about-us" to="about" />
         <Redirect from="about/*" to="about" />
