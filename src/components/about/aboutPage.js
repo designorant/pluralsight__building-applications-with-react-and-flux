@@ -1,8 +1,16 @@
 'use strict';
 
 var React = require('react');
+var ReactRouter = require('react-router');
+var Lifecycle = ReactRouter.Lifecycle;
 
-var About = React.createClass({
+var AboutPage = React.createClass({
+
+    mixins: [ Lifecycle ],
+
+    routerWillLeave: function() {
+        return 'Are you sure you want to leave a page that\'s this exciting?';
+    },
 
     render: function() {
         return (
@@ -26,4 +34,4 @@ var About = React.createClass({
 
 });
 
-module.exports = About;
+module.exports = AboutPage;
