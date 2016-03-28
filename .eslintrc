@@ -17,8 +17,9 @@
     "jquery": true
   },
   "rules": {
-    "no-console": 0,
-    "react/no-did-mount-set-state": 0
+    "no-console": 1,
+    "react/no-did-mount-set-state": 1,
+    "react/no-direct-mutation-state": 1
   },
   "globals": {
     "jQuery": true,
