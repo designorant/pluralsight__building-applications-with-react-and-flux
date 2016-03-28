@@ -18,6 +18,7 @@ var routes = (
         <IndexRoute component={HomePage} />
         <Route path="authors" component={AuthorPage} />
         <Route path="author" component={ManageAuthorPage} />
+        <Route path="author/:id" component={ManageAuthorPage} />
         <Route path="about" component={AboutPage} />
         <Redirect from="about-us" to="about" />
         <Redirect from="about/*" to="about" />

@@ -9,6 +9,10 @@ var Lifecycle = ReactRouter.Lifecycle;
 
 var ManageAuthorPage = React.createClass({
 
+    propTypes: {
+        params: React.PropTypes.object
+    },
+
     mixins: [
         ReactRouter.History,
         Lifecycle
@@ -19,6 +23,13 @@ var ManageAuthorPage = React.createClass({
             author: { id: '', firstName: '', lastName: '' },
             errors: {},
             dirty: false
+        }
+    },
+
+    componentWillMount: function() {
+        var authorId = this.props.params.id; // From the path '/author/:id'
+        if (authorId) {
+            this.setState({author: AuthorApi.getAuthorById(authorId)});
         }
     },
 
