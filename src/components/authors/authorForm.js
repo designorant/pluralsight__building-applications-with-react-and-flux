@@ -7,7 +7,8 @@ var AuthorForm = React.createClass({
 
     propTypes: {
         onChange: React.PropTypes.func,
-        author: React.PropTypes.object
+        author: React.PropTypes.object,
+        onSave: React.PropTypes.func
     },
 
     render: function() {
@@ -27,7 +28,7 @@ var AuthorForm = React.createClass({
                     value={this.props.author.lastName}
                     onChange={this.props.onChange} />
 
-                <input type="submit" value="Save" className="btn btn-default" />
+                <input type="submit" value="Save" className="btn btn-default" onClick={this.props.onSave} />
             </form>
         );
     }
